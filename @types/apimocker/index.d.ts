@@ -1,7 +1,7 @@
 // Declaration sample: https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html
 
-declare module "apimocker" {
-  import { RequestHandler, Application } from "express";
+declare module 'apimocker' {
+  import { RequestHandler, Application } from 'express';
 
   export interface configOptions {
     port?: string;
@@ -15,12 +15,10 @@ declare module "apimocker" {
     quiet?: boolean;
   }
 
+  export const defaults: Partial<configOptions>;
   export const options: configOptions;
   export const middlewares: RequestHandler[];
   export const corsMiddleware: RequestHandler;
-
-  export function createServer(options?: configOptions): ApiMocker;
-
   export interface ApiMocker {
     express: Application;
     middlewares: RequestHandler[];
@@ -44,4 +42,13 @@ declare module "apimocker" {
      */
     stop: (callback?: () => void) => ApiMocker;
   }
+
+  export function createServer(options?: configOptions): ApiMocker;
+  export function setConfigFile(file: string): ApiMocker;
+  export function loadConfigFile(): void;
+  export function start(
+    serverPort: string | number,
+    callback?: () => void
+  ): ApiMocker;
+  export function stop(callback?: () => void): ApiMocker;
 }

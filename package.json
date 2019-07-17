@@ -1,9 +1,10 @@
 {
-  "name": "@types/apimocker",
+  "name": "apimocker-ts-definition",
   "version": "0.1.3-0",
   "description": "TypeScript definition file for apimocker library",
   "types": "@types/apimocker/index.d.ts",
   "scripts": {
+    "postbuild": "npm version patch",
     "build": "tsc --project test/tsconfig.test.json",
     "webpack": "webpack --config test/webpack.config.js",
     "predebug": "npm run-script build",
@@ -18,7 +19,7 @@
   "keywords": [
     "apimocker",
     "ts",
-    "@types"
+    "@types/apimocker"
   ],
   "author": "Uchenna Chilaka <Uchenna.Chilaka@alliancedata.com>",
   "license": "MIT",
