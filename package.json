@@ -4,7 +4,7 @@
   "description": "TypeScript definition file for apimocker library",
   "types": "@types/apimocker/index.d.ts",
   "scripts": {
-    "postbuild": "npm version patch",
+    "postbuild": "npm version prepatch",
     "build": "tsc --project test/tsconfig.test.json",
     "webpack": "webpack --config test/webpack.config.js",
     "predebug": "npm run-script build",
