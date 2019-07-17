@@ -1,6 +1,6 @@
 {
   "name": "@types/apimocker",
-  "version": "0.1.1",
+  "version": "0.1.2-0",
   "description": "TypeScript definition file for apimocker library",
   "main": "index.d.ts",
   "scripts": {
