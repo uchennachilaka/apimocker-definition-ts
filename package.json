@@ -4,11 +4,12 @@
   "description": "TypeScript definition file for apimocker library",
   "types": "@types/apimocker/index.d.ts",
   "scripts": {
-    "build": "webpack --config test/webpack.config.js",
+    "build": "tsc --project test/tsconfig.test.json",
+    "webpack": "webpack --config test/webpack.config.js",
     "predebug": "npm run-script build",
     "debug": "PORT=7800 nodemon test/dist/main",
-    "test": "PORT=7800 tsnd --project test/src/tsconfig.test.json test/src/main.ts",
-    "gen:friends": "ts-node --project test/src/tsconfig.test.json test/src/generate-friends.ts"
+    "test": "PORT=7800 tsnd --project test/tsconfig.test.json test/src/main.ts",
+    "gen:friends": "ts-node --project test/tsconfig.test.json test/src/generate-friends.ts"
   },
   "repository": {
     "type": "git",
